@@ -33,14 +33,6 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.samples.petclinic.model.Person;
 
-/**
- * Simple JavaBean domain object representing a veterinarian.
- *
- * @author Ken Krebs
- * @author Juergen Hoeller
- * @author Sam Brannen
- * @author Arjen Poutsma
- */
 @Entity
 @Table(name = "vets")
 public class Vet extends Person {
@@ -54,10 +46,6 @@ public class Vet extends Person {
             this.specialties = new HashSet<>();
         }
         return this.specialties;
-    }
-
-    protected void setSpecialtiesInternal(Set<Specialty> specialties) {
-        this.specialties = specialties;
     }
 
     @XmlElement
@@ -75,5 +63,4 @@ public class Vet extends Person {
     public void addSpecialty(Specialty specialty) {
         getSpecialtiesInternal().add(specialty);
     }
-
 }

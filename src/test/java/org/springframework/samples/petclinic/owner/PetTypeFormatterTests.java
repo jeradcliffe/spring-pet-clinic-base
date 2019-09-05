@@ -25,6 +25,7 @@ import java.util.Locale;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -42,12 +43,8 @@ public class PetTypeFormatterTests {
     @Mock
     private PetRepository pets;
 
+    @InjectMocks
     private PetTypeFormatter petTypeFormatter;
-
-    @Before
-    public void setup() {
-        this.petTypeFormatter = new PetTypeFormatter(pets);
-    }
 
     @Test
     public void testPrint() {
